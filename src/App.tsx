@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Download, Share, ArrowDown, Building2 } from 'lucide-react';
+import { Download, Share, ArrowDown, Building2, LogIn } from 'lucide-react';
 import { useInstallPrompt } from './hooks/useInstallPrompt';
 import { useDeviceDetect } from './hooks/useDeviceDetect';
 import { WelcomePage } from './components/WelcomePage';
@@ -23,6 +23,7 @@ function HomePage() {
   const navigate = useNavigate();
   const { isInstallable, handleInstallClick } = useInstallPrompt();
   const { isIOS } = useDeviceDetect();
+  const isDirectAccess = !isStandalone && !isInstallable;
 
   useEffect(() => {
     if (isStandalone) {
@@ -42,8 +43,18 @@ function HomePage() {
             Access the RG Employee Hub securely from your device.
           </p>
         </div>
-        
-        {isIOS && !isStandalone ? (
+        {isDirectAccess ? (
+          <div className="space-y-4">
+            <Link
+              to="https://bolt-diy-9-1747859789261.netlify.app/"
+              className="group relative inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-xl hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 overflow-hidden"
+            >
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-indigo-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+              <LogIn className="w-5 h-5 mr-3 relative" />
+              <span className="relative">Log in via Browser</span>
+            </Link>
+          </div>
+        ) : isIOS && !isStandalone ? (
           <div className="space-y-6 bg-gray-50 rounded-2xl p-8">
             <p className="text-gray-900 font-medium">Install on your iOS device</p>
             <div className="flex items-center justify-center space-x-3 text-gray-600">

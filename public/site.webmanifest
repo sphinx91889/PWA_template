@@ -1,0 +1,31 @@
+{
+  "name": "Template Webapp",
+  "short_name": "Template Webapp",
+  "description": "Template for your next webapp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg",
+      "sizes": "5920x3584",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Recording studio overview"
+    },
+    {
+      "src": "https://images.pexels.com/photos/4090902/pexels-photo-4090902.jpeg",
+      "sizes": "4000x6000",
+      "type": "image/jpeg",
+      "label": "Mobile view of studio booking"
+    }
+  ]
+}

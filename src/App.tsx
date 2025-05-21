@@ -23,9 +23,11 @@ function HomePage() {
   const { isInstallable, handleInstallClick } = useInstallPrompt();
   const { isIOS } = useDeviceDetect();
 
-  if (isStandalone) {
-    return <WelcomePage />;
-  }
+  React.useEffect(() => {
+    if (isStandalone) {
+      navigate('/welcome', { replace: true });
+    }
+  }, [navigate]);
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-6">

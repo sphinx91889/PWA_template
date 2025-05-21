@@ -67,8 +67,6 @@ function HomePage() {
             </button>
             <Link
               to="https://bolt-diy-9-1747859789261.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-indigo-600 hover:text-indigo-500 transition-colors duration-200"
             >
               Login to Hub

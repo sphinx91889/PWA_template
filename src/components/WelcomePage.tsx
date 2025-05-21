@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Building2 } from 'lucide-react';
 
 export function WelcomePage() {
@@ -13,14 +14,12 @@ export function WelcomePage() {
           <p className="text-lg text-gray-500">
             Thank you for installing the RG Employee Hub. Click the button below to login.
           </p>
-          <a
-            href="https://bolt-diy-9-1747859789261.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/login"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-colors duration-200"
           >
             Login to Hub
-          </a>
+          </Link>
         </div>
       </div>
     </div>

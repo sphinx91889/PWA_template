@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import { Download, Share, ArrowDown, Building2 } from 'lucide-react';
 import { useInstallPrompt } from './hooks/useInstallPrompt';
 import { useDeviceDetect } from './hooks/useDeviceDetect';
@@ -66,9 +66,7 @@ function HomePage() {
               <span className="relative">Install App</span>
             </button>
             <Link
-              to="https://bolt-diy-9-1747859789261.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/login"
               className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-indigo-600 hover:text-indigo-500 transition-colors duration-200"
             >
               Login to Hub
@@ -88,6 +86,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/welcome" element={<WelcomePage />} />
         <Route path="/app" element={<WelcomePage />} />
+        <Route
+          path="/login"
+          element={<Navigate to="https://bolt-diy-9-1747859789261.netlify.app/" replace />}
+        />
       </Routes>
     </BrowserRouter>
   );

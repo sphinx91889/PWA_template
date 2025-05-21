@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Download, Share, ArrowDown, Sparkles } from 'lucide-react';
+import { Download, Share, ArrowDown, Building2 } from 'lucide-react';
 import { useInstallPrompt } from './hooks/useInstallPrompt';
 import { useDeviceDetect } from './hooks/useDeviceDetect';
 import { WelcomePage } from './components/WelcomePage';
@@ -35,11 +35,11 @@ function HomePage() {
       <div className="max-w-md w-full space-y-12 text-center">
         <div className="space-y-4">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-50 mb-2">
-            <Sparkles className="w-8 h-8 text-indigo-600" />
+            <Building2 className="w-8 h-8 text-indigo-600" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Template Webapp</h1>
+          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">RG Employee Hub</h1>
           <p className="text-lg text-gray-500 leading-relaxed">
-            Template for your next webapp. Simple, elegant, and ready to use.
+            Access the RG Employee Hub securely from your device.
           </p>
         </div>
         
@@ -66,10 +66,12 @@ function HomePage() {
               <span className="relative">Install App</span>
             </button>
             <Link
-              to="/app"
+              to="https://bolt-diy-9-1747859789261.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-indigo-600 hover:text-indigo-500 transition-colors duration-200"
             >
-              Continue in Browser
+              Login to Hub
             </Link>
           </div>
         ) : null}

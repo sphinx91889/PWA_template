@@ -1,7 +1,7 @@
 {
-  "name": "Template Webapp",
-  "short_name": "Template Webapp",
-  "description": "Template for your next webapp",
+  "name": "RG Employee Hub",
+  "short_name": "RG Hub",
+  "description": "Access the RG Employee Hub securely from your device",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

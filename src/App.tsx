@@ -46,7 +46,7 @@ function HomePage() {
         {isDirectAccess ? (
           <div className="space-y-4">
             <Link
-              to="https://bolt-diy-9-1747859789261.netlify.app/"
+              to="/app"
               className="group relative inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-xl hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 overflow-hidden"
             >
               <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-indigo-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
@@ -76,12 +76,6 @@ function HomePage() {
               <Download className="w-5 h-5 mr-3 relative" />
               <span className="relative">Install App</span>
             </button>
-            <Link
-              to="https://bolt-diy-9-1747859789261.netlify.app/"
-              className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-indigo-600 hover:text-indigo-500 transition-colors duration-200"
-            >
-              Login to Hub
-            </Link>
           </div>
         ) : null}
       </div>

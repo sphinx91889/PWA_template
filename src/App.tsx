@@ -4,7 +4,7 @@ import { Download, Share, ArrowDown, Building2 } from 'lucide-react';
 import { useInstallPrompt } from './hooks/useInstallPrompt';
 import { useDeviceDetect } from './hooks/useDeviceDetect';
 import { WelcomePage } from './components/WelcomePage';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,11 +23,9 @@ function HomePage() {
   const { isInstallable, handleInstallClick } = useInstallPrompt();
   const { isIOS } = useDeviceDetect();
 
-  React.useEffect(() => {
-    if (isStandalone) {
-      navigate('/welcome', { replace: true });
-    }
-  }, [navigate]);
+  if (isStandalone) {
+    return <Navigate to="/welcome" replace />;
+  }
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-6">
@@ -78,6 +76,14 @@ function HomePage() {
 }
 
 function App() {
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (isStandalone && window.location.pathname === '/') {
+      navigate('/welcome', { replace: true });
+    }
+  }, [navigate]);
+
   return (
     <BrowserRouter>
       <ScrollToTop />

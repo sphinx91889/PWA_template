@@ -23,7 +23,7 @@ function HomePage() {
   const navigate = useNavigate();
   const { isInstallable, handleInstallClick } = useInstallPrompt();
   const { isIOS } = useDeviceDetect();
-  const isDirectAccess = !isStandalone && !isInstallable;
+  const isDirectAccess = !isStandalone;
 
   useEffect(() => {
     if (isStandalone) {

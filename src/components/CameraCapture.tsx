@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Camera } from 'lucide-react';
+import { Camera, RotateCcw } from 'lucide-react';
 
 export function CameraCapture() {
   const [photo, setPhoto] = useState<string | null>(null);
@@ -32,6 +32,7 @@ export function CameraCapture() {
   const takePhoto = () => {
     try {
       if (videoRef.current) {
+        if (stream?.active === false) return;
         const canvas = document.createElement('canvas');
         canvas.width = videoRef.current.videoWidth;
         canvas.height = videoRef.current.videoHeight;
@@ -47,6 +48,10 @@ export function CameraCapture() {
     }
   };
 
+  const retakePhoto = () => {
+    setPhoto(null);
+  };
+
   return (
     <div className="relative w-full max-w-sm mx-auto">
       <video
@@ -57,10 +62,14 @@ export function CameraCapture() {
       />
       
       <button
-        onClick={takePhoto}
+        onClick={photo ? retakePhoto : takePhoto}
         className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
-        <Camera className="w-6 h-6 text-indigo-600" />
+        {photo ? (
+          <RotateCcw className="w-6 h-6 text-indigo-600" />
+        ) : (
+          <Camera className="w-6 h-6 text-indigo-600" />
+        )}
       </button>
       
       {photo && (

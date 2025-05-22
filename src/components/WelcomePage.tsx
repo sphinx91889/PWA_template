@@ -1,5 +1,6 @@
 import React from 'react';
 import { Rocket } from 'lucide-react';
+import { CameraCapture } from './CameraCapture';
 
 export function WelcomePage() {
   return (
@@ -13,6 +14,9 @@ export function WelcomePage() {
           <p className="text-lg text-gray-500">
             Thank you for installing our app. You're all set to start using the full experience.
           </p>
+          <div className="mt-8">
+            <CameraCapture />
+          </div>
         </div>
       </div>
     </div>

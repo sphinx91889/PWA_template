@@ -63,7 +63,7 @@ export function CameraCapture() {
       
       <button
         onClick={photo ? retakePhoto : takePhoto}
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 z-10"
       >
         {photo ? (
           <RotateCcw className="w-6 h-6 text-indigo-600" />
@@ -74,7 +74,7 @@ export function CameraCapture() {
       
       {photo && (
         <div
-          className="absolute inset-0 rounded-2xl"
+          className="absolute inset-0 rounded-2xl z-0"
           style={{
             backgroundImage: `url(${photo})`,
             backgroundSize: 'cover',
